@@ -9,7 +9,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Get Things Done-->
+        <!--Items-->
         <scene sceneID="ts2-z5-P8T">
             <objects>
                 <tableViewController id="Yjl-kD-LbQ" customClass="TodoListViewController" customModule="Get_Things_Done" customModuleProvider="target" sceneMemberID="viewController">
@@ -17,9 +17,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="niC-M1-wBD">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <outlet property="delegate" destination="Yjl-kD-LbQ" id="bBU-Mq-Fwb"/>
+                            </connections>
+                        </searchBar>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoItemCell" id="03W-Kn-RfP">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="03W-Kn-RfP" id="O4n-uK-EW6">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -32,7 +40,7 @@
                             <outlet property="delegate" destination="Yjl-kD-LbQ" id="TGz-L5-sYB"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Get Things Done" id="DPH-cl-zZk">
+                    <navigationItem key="navigationItem" title="Items" id="DPH-cl-zZk">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="MWi-CP-S0L">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
@@ -43,7 +51,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2DN-ft-g8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1540" y="117"/>
+            <point key="canvasLocation" x="1847" y="115"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Nfq-Rc-qKV">
@@ -60,12 +68,51 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="Yjl-kD-LbQ" kind="relationship" relationship="rootViewController" id="hVV-s9-mqE"/>
+                        <segue destination="cXF-Cb-1af" kind="relationship" relationship="rootViewController" id="hoc-UP-aOk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SUX-W0-qWn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832.79999999999995" y="117.39130434782609"/>
+            <point key="canvasLocation" x="386" y="115"/>
+        </scene>
+        <!--Get Thing Done-->
+        <scene sceneID="m9m-tZ-bum">
+            <objects>
+                <tableViewController id="cXF-Cb-1af" customClass="CategoryTableViewController" customModule="Get_Things_Done" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="bsv-KI-x1F">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="categoryCell" id="iMY-hf-HRS">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="iMY-hf-HRS" id="kUK-3o-6sq">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="cXF-Cb-1af" id="On5-42-4v4"/>
+                            <outlet property="delegate" destination="cXF-Cb-1af" id="WrN-YT-Ig4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Get Thing Done" id="N5h-aO-Rg2">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="4hd-ya-vwP">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPress:" destination="cXF-Cb-1af" id="AnK-AW-Vsn"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="Yjl-kD-LbQ" kind="show" identifier="goToItems" id="ujB-1K-obN"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WI0-DN-grJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1094" y="115"/>
         </scene>
     </scenes>
 </document>
