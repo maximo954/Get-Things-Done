@@ -13,8 +13,9 @@
 		C0184F8E213CEEF700E79D47 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0184F8C213CEEF700E79D47 /* Main.storyboard */; };
 		C0184F90213CEEF800E79D47 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C0184F8F213CEEF800E79D47 /* Assets.xcassets */; };
 		C0184F93213CEEF800E79D47 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0184F91213CEEF800E79D47 /* LaunchScreen.storyboard */; };
-		C01F6ED3213DB73900D3CED6 /* CoreDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C01F6ED1213DB73900D3CED6 /* CoreDataModel.xcdatamodeld */; };
 		C0ECE72C213DD49A008125CD /* CategoryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ECE72B213DD49A008125CD /* CategoryTableViewController.swift */; };
+		C0ECE730213E0408008125CD /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ECE72F213E0408008125CD /* Item.swift */; };
+		C0ECE732213E0415008125CD /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0ECE731213E0415008125CD /* Category.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +28,9 @@
 		C0184F8F213CEEF800E79D47 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C0184F92213CEEF800E79D47 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C0184F94213CEEF800E79D47 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C01F6ED2213DB73900D3CED6 /* CoreDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CoreDataModel.xcdatamodel; sourceTree = "<group>"; };
 		C0ECE72B213DD49A008125CD /* CategoryTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewController.swift; sourceTree = "<group>"; };
+		C0ECE72F213E0408008125CD /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
+		C0ECE731213E0415008125CD /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		D150DF72C13AAFACF45004B9 /* Pods-Get-Things-Done.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Get-Things-Done.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Get-Things-Done/Pods-Get-Things-Done.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -86,7 +88,8 @@
 		C0BAB0FD213D93840018934C /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
-				C01F6ED1213DB73900D3CED6 /* CoreDataModel.xcdatamodeld */,
+				C0ECE72F213E0408008125CD /* Item.swift */,
+				C0ECE731213E0415008125CD /* Category.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -200,16 +203,12 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Get-Things-Done/Pods-Get-Things-Done-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
@@ -224,15 +223,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-Get-Things-Done-checkManifestLockResult.txt",
 			);
@@ -248,10 +243,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0ECE730213E0408008125CD /* Item.swift in Sources */,
 				C0184F8B213CEEF700E79D47 /* TodoListViewController.swift in Sources */,
-				C01F6ED3213DB73900D3CED6 /* CoreDataModel.xcdatamodeld in Sources */,
 				C0184F89213CEEF700E79D47 /* AppDelegate.swift in Sources */,
 				C0ECE72C213DD49A008125CD /* CategoryTableViewController.swift in Sources */,
+				C0ECE732213E0415008125CD /* Category.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -451,19 +447,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C01F6ED1213DB73900D3CED6 /* CoreDataModel.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C01F6ED2213DB73900D3CED6 /* CoreDataModel.xcdatamodel */,
-			);
-			currentVersion = C01F6ED2213DB73900D3CED6 /* CoreDataModel.xcdatamodel */;
-			path = CoreDataModel.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C0184F7D213CEEF700E79D47 /* Project object */;
 }
